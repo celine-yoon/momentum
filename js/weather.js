@@ -1,9 +1,8 @@
 function onGeoSuccess(position) {
   console.log(position);
-  const API_KEY = "13f859a1e2b38e6d3a3366aa50b30ab8";
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${{secrets.WEATHER_API_KEY}}&units=metric`;
 
   fetch(url)
     .then((resp) => resp.json())
